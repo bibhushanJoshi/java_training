@@ -11,12 +11,14 @@ import java.util.Scanner;
 * 2. A palindrome is a sequence of characters that reads the same backward as forward.
 * 	 For example, each of the following five-digit integers  * is a palindrome: 12321,
 * 	 55555, 45554 and 11611. Write an application that reads in a five-digit integer 
-* 	and determines whether it is a palindrome. If the number is not five digits long, 
+*	and determines whether it is a palindrome. If the number is not five digits long, 
 * 	display an error message and allow the user to enter a new value.
 *
-* 3. Write a program to find the number of and sum of all integers greater than 100 and less than 200 that are divisible by 7.
+* 3. Write a program to find the number of and sum of all integers greater than 100 
+* 	and less than 200 that are divisible by 7.
 *
-* 4. Write a program using switch statement to develop a simple calculator for +, -, *, /, and % operators.
+* 4. Write a program using switch statement to develop a simple calculator for +, -, *,
+* 	 /, and % operators.
 *
 *
 */
