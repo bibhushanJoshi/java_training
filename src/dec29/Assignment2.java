@@ -4,9 +4,15 @@ import java.util.Scanner;
 /*
 *
 *
-* 1. Write a program that displays the temperatures from 0 degrees Celsius to 100 degrees Celsius and its Fahrenheit equivalent. Note that    * the conversion from Celsius to Fahrenheit uses the following formula: F = C * 9/5 + 32;
+* 1. Write a program that displays the temperatures from 0 degrees Celsius to 100
+*	 degrees Celsius and its Fahrenheit equivalent. Note that the conversion from
+*	 Celsius to Fahrenheit uses the following formula: F = C * 9/5 + 32;
 *
-* 2. A palindrome is a sequence of characters that reads the same backward as forward. For example, each of the following five-digit integers  * is a palindrome: 12321, 55555, 45554 and 11611. Write an application that reads in a five-digit integer and determines whether it is a *palindrome. If the number is not five digits long, display an error message and allow the user to enter a new value.
+* 2. A palindrome is a sequence of characters that reads the same backward as forward.
+* 	 For example, each of the following five-digit integers  * is a palindrome: 12321,
+* 	 55555, 45554 and 11611. Write an application that reads in a five-digit integer 
+* 	and determines whether it is a palindrome. If the number is not five digits long, 
+* 	display an error message and allow the user to enter a new value.
 *
 * 3. Write a program to find the number of and sum of all integers greater than 100 and less than 200 that are divisible by 7.
 *
@@ -18,6 +24,8 @@ import java.util.Scanner;
 *
 * @author Bibhushan Raj Joshi
 */
+
+
 public class Assignment2 {
 
 	private static Scanner scan;
