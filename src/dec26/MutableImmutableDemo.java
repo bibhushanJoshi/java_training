@@ -1,17 +1,31 @@
 package dec26;
+
+/*
+ * Create a class MutableImmutableDemo. Inside that class create object greeting
+ * of string & another object welcome of stringBuilder.Try to modify both obj by 
+ * concate. Some string on a suffix.
+ */
+
+/**
+ * 
+ * @author bibhushan
+ *
+ */
+
 public class MutableImmutableDemo {
 	public static void main(String args[]){
-		String s1 = "greeting";
-		String s2 = "welcome";
-		String s4 ="Everyone";
+		String greeting = "Hello";
+		String s1 ="Bibhushan";
+		String s2 = " ";
+		String s4;
 		
 		//using stringBuilder
-		StringBuilder s3 = new StringBuilder();
-		s3.append("dfd").append(s1).append(s2);
-		System.out.println(s3);
+		StringBuilder welcome = new StringBuilder();
+		welcome.append(greeting).append(s2).append(s1);
+		System.out.println(welcome);
 		
 		//using string concatenation
-		s4 = s4.concat("heheheh").concat(s1);
+		s4 = greeting.concat(s2).concat(s1).concat(s2).concat("Joshi");
 		System.out.println(s4);
 	}
 

@@ -1,6 +1,17 @@
 package dec26;
 import java.util.Scanner;
 
+/*
+ * WAP that computes your Initial from your full name and displays them.
+ * 
+ */
+
+/**
+ * 
+ * @author bibhushan
+ *
+ */
+
 public class InitialExtractor {
 
 	private static Scanner scan;

@@ -1,6 +1,17 @@
 package dec26;
 import java.util.Scanner;
 
+/*
+ * WAP which accepts name of cities. Ask a user to enter character sequence to search
+ * the city.Then display the searched cities.
+ */
+
+/**
+ * 
+ * @author bibhushan
+ *
+ */
+
 public class SearchCity {
 	
 	private static Scanner scan;

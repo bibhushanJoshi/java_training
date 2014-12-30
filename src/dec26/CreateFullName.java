@@ -1,5 +1,15 @@
 package dec26;
 import java.util.Scanner;
+/*
+ * WAP which gets 4 arguments from console: initial, firstname, middlename and lastname.
+ * Then displays as a full-name.
+ */
+
+/**
+ * 
+ * @author bibhushan
+ *
+ */
 
 public class CreateFullName {
 
