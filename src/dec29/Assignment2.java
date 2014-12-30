@@ -54,7 +54,7 @@ public class Assignment2 {
 			tempConverter();
 			break;
 		case 2:
-			palindrome();
+			checkPalindrome();
 			break;
 		case 3:
 			numberSum();
@@ -97,7 +97,12 @@ public class Assignment2 {
 			output = num1 * num2;
 			break;
 		case 4:
-			output = num1 / num2;
+			if(num2 == 0){
+				System.out.println("Math Error : Division by 0 is not possible");
+				System.exit(0);
+			}
+			else
+				output = num1 / num2;
 			break;
 		case 5:
 			output = num1 % num2;
@@ -138,7 +143,7 @@ public class Assignment2 {
 	}
 
 	// Function to check palindrome number
-	public static void palindrome() {
+	public static void checkPalindrome() {
 		int temp;
 		int num = 0;
 		int revnum = 0;
