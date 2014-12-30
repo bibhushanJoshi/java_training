@@ -23,10 +23,10 @@ public class CreateFullName {
 	private static Scanner scan;
 
 	public static void main(String[] args) {
-		String firstName;
-		String middleName;
-		String lastName;
-		String initial;
+		String firstName = "";
+		String middleName = "";
+		String lastName = "";
+		String initial = "";
 		scan = new Scanner(System.in);
 
 		// get initial

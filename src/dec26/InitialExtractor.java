@@ -21,11 +21,16 @@ public class InitialExtractor {
 	private static Scanner scan;
 
 	public static void main(String[] args) {
+		
 		String tempName;
-		System.out.println("Enter name with Initials:");
-		scan = new Scanner(System.in);
-		tempName = scan.nextLine();
-		String[] name = tempName.split(" ");
+		
+		String [] name;
+		do{
+			System.out.println("Enter name with Initials:");
+			scan = new Scanner(System.in);
+			tempName = scan.nextLine();
+			name = tempName.split(" ");
+		}while(name.length == 1);
 		System.out.println("Initial:"+name[0]);
 	}
 }
