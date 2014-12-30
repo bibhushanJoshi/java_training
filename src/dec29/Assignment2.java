@@ -114,7 +114,7 @@ public class Assignment2 {
 
 	// Function to sum the number between 100-200
 	public static void numberSum() {
-		int min = 100;
+		int min = 101;
 		int max = 200;
 		int sum = 0;
 
@@ -135,7 +135,8 @@ public class Assignment2 {
 		System.out.println("Required temperature: ");
 
 		// celsius to farenheit conversion process
-		for (int i = 0; i < 100; i++) {
+		int i = 0;
+		for (i=0; i < 100; i++) {
 			cDegree = i;
 			fDegree = (cDegree * 9 / 5 + 32);
 			System.out.println(cDegree + "°C equals to " + fDegree + "°F");
