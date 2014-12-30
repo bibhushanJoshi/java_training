@@ -8,6 +8,10 @@ import java.util.Scanner;
 
 /**
  * 
+ * This class helps in the search of city name from the number of city names provided by
+ * the user. The list of cities are collected in an array which is laster used to find 
+ * the searched city name.
+ * 
  * @author bibhushan
  *
  */

@@ -9,6 +9,11 @@ import java.util.Scanner;
 
 /**
  * 
+ * This class helps to create fullname when the user provides the program with initial, 
+ * firstname, middlename and lastname. StringBuilder is used to append different variable
+ * and get the output. 
+ * 
+ * 
  * @author bibhushan
  * 
  */

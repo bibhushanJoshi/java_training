@@ -8,6 +8,10 @@ import java.util.Scanner;
 
 /**
  * 
+ * IntegerDemo class is created to know the range of the integer. Exception is thrown 
+ * when the given number is out of range.
+ * 
+ * 
  * @author bibhushan
  *
  */

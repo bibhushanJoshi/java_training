@@ -8,6 +8,10 @@ package dec26;
 
 /**
  * 
+ * MutableImmutable Demo class  appends the string using stringBuilder first and also 
+ * concatenates the string using concatenate function. This shows the mutable and immutable
+ * function of the StringBuilder and String respectively.
+ * 
  * @author bibhushan
  *
  */
