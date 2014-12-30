@@ -24,5 +24,4 @@ public class InitialExtractor {
 		String[] name = s.split(" ");
 		System.out.println("Initial:"+name[0]);
 	}
-
 }

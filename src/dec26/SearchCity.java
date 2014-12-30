@@ -18,18 +18,18 @@ public class SearchCity {
 	
 	public static void main(String[] args) {
 		
+		scan = new Scanner(System.in);
+		
 		//Take 5 cities names
 		String [] initial = new String [5];
 		System.out.println("Enter names of the city:");
 		
-		for(int i=0;i<5;i++){
-			scan = new Scanner(System.in);
+		for(int i=0;i<initial.length;i++){
 			initial[i] = scan.nextLine();
 		}
 		
 		//get the search character
 		System.out.println("Search the city");
-			scan = new Scanner(System.in);
 		String searchWord = scan.nextLine();
 		
 		//search the city required

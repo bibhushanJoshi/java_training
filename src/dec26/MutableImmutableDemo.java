@@ -15,18 +15,16 @@ package dec26;
 public class MutableImmutableDemo {
 	public static void main(String args[]){
 		String greeting = "Hello";
-		String s1 ="Bibhushan";
-		String s2 = " ";
-		String s4;
+		String user ="Bibhushan";
+		String space = " ";
 		
 		//using stringBuilder
 		StringBuilder welcome = new StringBuilder();
-		welcome.append(greeting).append(s2).append(s1);
-		System.out.println(welcome);
+		welcome.append(greeting).append(space).append(user);
+		System.out.println("Mutable: "+welcome);
 		
-		//using string concatenation
-		s4 = greeting.concat(s2).concat(s1).concat(s2).concat("Joshi");
-		System.out.println(s4);
+		//using string is immutable since its value doesn't change after concatenation
+		greeting.concat(space).concat(user).concat(space).concat("Joshi");
+		System.out.println("Immutable: "+greeting);
 	}
-
 }

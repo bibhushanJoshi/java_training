@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 /*
  * WAP called IntegerDemo which accepts Integer value beyond its range.Try to print
- * & see what exception the system throws.
+ * 
  */
 
 /**
@@ -13,15 +13,17 @@ import java.util.Scanner;
  */
 
 public class IntegerDemo {
-	private static final Scanner SCANNER = new Scanner(System.in);
+	
+	private static Scanner scan;
 
 	public static void main (String args[]){
 		try {
 			System.out.println("Enter integer number: ");
-			int num = SCANNER.nextInt();
+			scan = new Scanner(System.in);
+			int num = scan.nextInt();
 			System.out.println("The required value is:"+num);
 		} catch (Exception e) {
-		    System.out.println(e.getMessage()+" out of range");
+		    System.out.println("out of range");
 		}
 	}
 }
