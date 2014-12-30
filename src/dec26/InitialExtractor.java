@@ -11,6 +11,7 @@ import java.util.Scanner;
  * InitialExtractor class gets the name of the user and splits the name of the user to
  * get initial of the user.
  * 
+ *
  * 
  * @author bibhushan
  *
@@ -23,8 +24,8 @@ public class InitialExtractor {
 	public static void main(String[] args) {
 		
 		String tempName;
-		
 		String [] name;
+
 		do{
 			System.out.println("Enter name with Initials:");
 			scan = new Scanner(System.in);
