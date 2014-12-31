@@ -2,7 +2,7 @@ package dec29;
 
 import java.util.Scanner;
 
-/*
+/**
  *
  *
  * 1. Write a program that displays the temperatures from 0 degrees Celsius to 100
@@ -14,8 +14,7 @@ import java.util.Scanner;
  *
  *
  *
- */
-/**
+ *
  * 
  * This class uses switch case to give user the option to do: Evaluation of the
  * temperature from 0°C to 100°C. Also with its conversion in Fahrenheit
