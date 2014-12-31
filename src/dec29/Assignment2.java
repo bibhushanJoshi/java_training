@@ -79,8 +79,7 @@ public class Assignment2 {
 		System.out.println("Required temperature: ");
 
 		// celsius to farenheit conversion process
-		int i = 0;
-		for (i=0; i < 100; i++) {
+		for (int i=0; i < 100; i++) {
 			cDegree = i;
 			fDegree = (cDegree * 9 / 5 + 32);
 			count++;
