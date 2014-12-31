@@ -19,7 +19,7 @@ import java.util.Scanner;
 * @author Bibhushan Raj Joshi
 */
 
-public class calculator {
+public class Calculator {
 	
 	private static Scanner scan;
 	
