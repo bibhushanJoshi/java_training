@@ -26,16 +26,16 @@ public class TempConverter {
 		
 		float cDegree = 0;
 		float fDegree = 0;
+		String Degree  = "\u00b0";
 		int count = 0;
 		
 		System.out.println("Converted temperature: ");
 
 		/*celsius to farenheit conversion process*/
 		for (int i=0; i < 100; i++) {
-			cDegree = i;
-			fDegree = (cDegree * 9 / 5 + 32);
+			fDegree = (i * 9 / 5 + 32);
 			count++;
-			System.out.println(count+"\t"+cDegree + "°C equals to " + fDegree + "°F");
+			System.out.println(count+"\t"+cDegree +Degree+"C equals to " + fDegree +Degree+"F");
 		}
 	}
 }

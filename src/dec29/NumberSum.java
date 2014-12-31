@@ -29,7 +29,7 @@ public class NumberSum {
 		int sum = 0;
 		int count = 0;
 
-		/*sum of number greater than 100 and less than 200*/
+		/*sum of number greater than 100 and less than 200 which is divisible by 7*/
 		for (int i = min; i < max; i++) {
 			if (i % 7 == 0) {
 				count++;

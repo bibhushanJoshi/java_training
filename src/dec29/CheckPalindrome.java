@@ -56,7 +56,7 @@ public class CheckPalindrome {
 		} while (numS.length() != 5);
 		
 		
-		// reverse number generation
+		/*reverse number generation */
 		while (tempNum > 0) {
 			temp = tempNum % 10;
 			tempNum = tempNum / 10;
