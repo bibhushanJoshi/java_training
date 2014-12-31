@@ -20,7 +20,7 @@ package dec29;
 * @author Bibhushan Raj Joshi
 */
 
-public class tempConverter {
+public class TempConverter {
 
 	public static void main(String[] args) {
 		
@@ -30,7 +30,7 @@ public class tempConverter {
 		
 		System.out.println("Converted temperature: ");
 
-		// celsius to farenheit conversion process
+		/*celsius to farenheit conversion process*/
 		for (int i=0; i < 100; i++) {
 			cDegree = i;
 			fDegree = (cDegree * 9 / 5 + 32);

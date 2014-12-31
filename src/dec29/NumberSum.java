@@ -20,7 +20,7 @@ package dec29;
 * @author Bibhushan Raj Joshi
 */
 
-public class numberSum {
+public class NumberSum {
 
 	public static void main(String[] args) {
 		
@@ -29,7 +29,7 @@ public class numberSum {
 		int sum = 0;
 		int count = 0;
 
-		// sum of number greater than 100 and less than 200
+		/*sum of number greater than 100 and less than 200*/
 		for (int i = min; i < max; i++) {
 			if (i % 7 == 0) {
 				count++;
