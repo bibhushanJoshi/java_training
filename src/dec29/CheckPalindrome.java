@@ -21,7 +21,7 @@ import java.util.Scanner;
 * @author Bibhushan Raj Joshi
 */
 
-public class checkPalindrome {
+public class CheckPalindrome {
 	
 	private static Scanner scan;
 	
@@ -34,7 +34,7 @@ public class checkPalindrome {
 		boolean wrongInput = false;
 		scan = new Scanner(System.in);
 
-		// check length of the number and whether the number is integer
+		/*check length of the number and whether the number is integer*/
 		do {
 			
 			do{
@@ -62,14 +62,14 @@ public class checkPalindrome {
 			tempNum = tempNum / 10;
 			revnum = revnum * 10 + temp;
 		}
-		//System.out.println("The reverse number of "+num+" is: "+revnum);
 
-		// check if reverse number equals to original number
-		if (num == revnum)
+		/* check if reverse number equals to original number*/
+		if (num == revnum){
 			System.out.println("The given number "+num+" is a palindrome number");
-		else
+		}
+		else{
 			System.out.println("The given number "+num+" is not a palindrome number");
-
+		}
 	}
 
 	}
