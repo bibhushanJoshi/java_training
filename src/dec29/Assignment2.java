@@ -51,8 +51,12 @@ public class Assignment2 {
 		}
 	}
 
-	
-	// Function to sum the number between 100-200
+	/**
+	 * This is the method which makes sum of numbers divisible by 7
+	 * between 100 and 200.
+	 * @param args Unused.
+	 * @return Nothing.
+	 */
 	public static void numberSum() {
 		int min = 101;
 		int max = 200;
@@ -70,7 +74,12 @@ public class Assignment2 {
 		System.out.println("The required sum is:" + sum);
 	}
 
-	// Function to convert the temperature
+	
+	/**
+	 * This is the method which converts celsius degree to farenheit between 0 to 100
+	 * @param args Unused.
+	 * @return Nothing.
+	 */
 	public static void tempConverter() {
 		float cDegree = 0;
 		float fDegree = 0;
