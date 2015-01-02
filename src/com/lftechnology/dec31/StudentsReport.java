@@ -16,22 +16,25 @@ package com.lftechnology.dec31;
 public class StudentsReport {
 
 	public static void main(String[] args) {
-		Student s1 = new Student();
-		Student s2 = new Student();
-		Student s3 = new Student();
-		Student s4 = new Student();
-		Student s5 = new Student();
-		s1.setData("Ram", "Bct", 504, new float[] { 60, 70, 60, 50, 50 });
-		s2.setData("Shyam", "Bex", 504, new float[] { 60, 70, 60, 50, 50 });
-		s3.setData("Hari", "Bce", 504, new float[] { 60, 70, 60, 50, 50 });
-		s4.setData("Seeta", "Bcscit", 504, new float[] { 60, 70, 60, 50, 50 });
-		s5.setData("Ramesh", "Bim", 504, new float[] { 60, 70, 60, 50, 50 });
+		Student student1 = new Student();
+		Student student2 = new Student();
+		Student student3 = new Student();
+		Student student4 = new Student();
+		Student student5 = new Student();
+		student1.setData("Ram", "Bct", 504, new float[] { 60, 70, 60, 50, 50 });
+		student2.setData("Shyam", "Bex", 504,
+				new float[] { 60, 75, 61, 58, 51 });
+		student3.setData("Hari", "Bce", 504, new float[] { 80, 77, 61, 40, 30 });
+		student4.setData("Seeta", "Bcscit", 504, new float[] { 50, 90, 20, 10,
+				50 });
+		student5.setData("Ramesh", "Bim", 504,
+				new float[] { 30, 50, 90, 70, 10 });
 		System.out.println("Name\t\t Class\t Roll.no\t GPA\t Percentage");
-		s1.displayStudentStatistics();
-		s2.displayStudentStatistics();
-		s3.displayStudentStatistics();
-		s4.displayStudentStatistics();
-		s5.displayStudentStatistics();
+		student1.displayStudentStatistics();
+		student2.displayStudentStatistics();
+		student3.displayStudentStatistics();
+		student4.displayStudentStatistics();
+		student5.displayStudentStatistics();
 	}
 }
 

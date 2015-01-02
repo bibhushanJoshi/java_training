@@ -22,18 +22,14 @@ package com.lftechnology.dec31;
 public class EmployeeTest {
 
 	public static void main(String[] args) {
-		Employee e1 = new Employee();
-		Employee e2 = new Employee();
-		e1.setFirstName("Ram");
-		e1.setLastName("Sharma");
-		e1.setMonthSalary(100);
+		Employee employee1 = new Employee("Ram", "Sharma", 100);
+		Employee employee2 = new Employee("Hari", "Sharma", 200);
+		employee1.setMonthSalary(100);
+		employee2.setMonthSalary(200);
 		System.out
 				.println("First name\t Last name\t yearSalary\t raisedSalary");
-		e1.displayEmployeeDetail();
-		e2.setFirstName("Hari");
-		e2.setLastName("Sharma");
-		e2.setMonthSalary(200);
-		e2.displayEmployeeDetail();
+		employee1.displayEmployeeDetail();
+		employee2.displayEmployeeDetail();
 
 	}
 }
@@ -53,10 +49,10 @@ class Employee {
 	private String lastName;
 	private double monthSalary;
 
-	public Employee() {
-		firstName = "";
-		lastName = "";
-		monthSalary = 0;
+	public Employee(String firstName, String lastName, double monthSalary) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.monthSalary = monthSalary;
 	}
 
 	public void setMonthSalary(double monthSalary) {

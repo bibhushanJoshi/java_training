@@ -19,8 +19,8 @@ import java.util.Scanner;
 public class DistanceManipulation {
 
 	public static void main(String[] args) {
-		Distance input1 = new Distance();
-		Distance input2 = new Distance();
+		Distance distance1 = new Distance();
+		Distance distance2 = new Distance();
 		Scanner scan = new Scanner(System.in);
 		Boolean wrongInput = false;
 		try {
@@ -30,12 +30,12 @@ public class DistanceManipulation {
 							.println("Enter First distance's feet(Integer) and inch(Float): ");
 					int feet1 = scan.nextInt();
 					float inch1 = scan.nextFloat();
-					input1.setData(feet1, inch1);
+					distance1.setData(feet1, inch1);
 					System.out
 							.println("Enter Second distance's feet and inch: ");
 					int feet2 = scan.nextInt();
 					float inch2 = scan.nextFloat();
-					input2.setData(feet2, inch2);
+					distance2.setData(feet2, inch2);
 					System.out.println("The given distances are \n");
 					wrongInput = false;
 				} catch (Exception e) {
@@ -48,10 +48,10 @@ public class DistanceManipulation {
 		} finally {
 			scan.close();
 		}
-		input1.displayDistance();
-		input2.displayDistance();
-		input1.addDistance(input2);
-		input1.compareDistance(input2);
+		distance1.displayDistance();
+		distance2.displayDistance();
+		distance1.addDistance(distance2);
+		distance1.compareDistance(distance2);
 	}
 }
 

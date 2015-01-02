@@ -22,14 +22,15 @@ package com.lftechnology.dec31;
 public class DateTest {
 
 	public static void main(String[] args) {
-		Date d1 = new Date(12, 01, 2014);
-		d1.displayDate();
-		Date d2 = new Date();
-		d2.setDay(1);
-		d2.setMonth(11);
-		d2.setYear(2015);
-		System.out.println(d2.getDay() + " / " + d2.getMonth() + " / "
-				+ d2.getYear());
+		Date date1 = new Date(12, 01, 2014);
+		System.out.println("The given dates are:");
+		date1.displayDate();
+		Date date2 = new Date();
+		date2.setDay(1);
+		date2.setMonth(11);
+		date2.setYear(2015);
+		System.out.println(date2.getDay() + " / " + date2.getMonth() + " / "
+				+ date2.getYear());
 	}
 }
 
@@ -52,10 +53,10 @@ class Date {
 
 	}
 
-	public Date(int mm, int dd, int yy) {
-		month = mm;
-		day = dd;
-		year = yy;
+	public Date(int month, int day, int year) {
+		this.month = month;
+		this.day = day;
+		this.year = year;
 	}
 
 	/**

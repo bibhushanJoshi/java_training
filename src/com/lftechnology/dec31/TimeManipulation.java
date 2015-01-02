@@ -16,13 +16,13 @@ package com.lftechnology.dec31;
 public class TimeManipulation {
 
 	public static void main(String[] args) {
-		Time day = new Time(12, 1, 15);
-		Time evening = new Time(06, 05, 6);
+		Time time1 = new Time(12, 1, 15);
+		Time time2 = new Time(06, 05, 6);
 		System.out.println("First set of Time: ");
-		day.displayDate();
+		time1.displayDate();
 		System.out.println("Seconnd set of Time: ");
-		evening.displayDate();
-		day.addTime(evening);
+		time2.displayDate();
+		time1.addTime(time2);
 	}
 
 }
@@ -41,10 +41,10 @@ class Time {
 	private int minutes;
 	private int seconds;
 
-	public Time(int hr, int min, int sec) {
-		hours = hr;
-		minutes = min;
-		seconds = sec;
+	public Time(int hour, int minutes, int seconds) {
+		this.hours = hour;
+		this.minutes = minutes;
+		this.seconds = seconds;
 	}
 
 	/**
