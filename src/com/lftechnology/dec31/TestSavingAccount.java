@@ -34,8 +34,9 @@ public class TestSavingAccount {
 		System.out.println("First month salary: $" + firstSalary);
 		System.out.println("Second month salary: $"
 				+ (firstSalary + saver1.calculateMonthlyInterest()));
+
 		firstSalary = saver2.getSavingBalance()
-				+ saver1.calculateMonthlyInterest();
+				+ saver2.calculateMonthlyInterest();
 		saver2.setInterestRate(5);
 		System.out.println("First month salary: $" + firstSalary);
 		System.out.println("Second month salary: $"
