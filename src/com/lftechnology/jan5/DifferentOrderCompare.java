@@ -12,8 +12,9 @@ import java.util.logging.Logger;
  * @author bibhushan<bibhushanjoshi@lftechnology.com>
  * 
  */
-public class DifferntOrderCompare {
-	private static Logger log = Logger.getLogger(ArraySearch.class.getName());
+public class DifferentOrderCompare {
+	private static Logger log = Logger.getLogger(DifferentOrderCompare.class
+			.getName());
 
 	public static void main(String[] args) {
 		String[] arrayInput1 = { "abc", "abc", "abc", "name", "nnn" };
@@ -41,7 +42,8 @@ public class DifferntOrderCompare {
 			sameContent = false;
 			log.info("Length of two array is different");
 		} else {
-			for (int i = 0; i < arrayInput1.length; i++) {
+			int arrayLength = arrayInput1.length;
+			for (int i = 0; i < arrayLength; i++) {
 				if (wordCount(arrayInput1[i], arrayInput1) == wordCount(
 						arrayInput1[i], arrayInput2)) {
 					sameContent = true;
@@ -65,7 +67,8 @@ public class DifferntOrderCompare {
 	 */
 	public static int wordCount(String compareWord, String[] array) {
 		int counter = 0;
-		for (int i = 0; i < array.length; i++) {
+		int arrayLength = array.length;
+		for (int i = 0; i < arrayLength; i++) {
 			if (compareWord == array[i]) {
 				counter++;
 			}

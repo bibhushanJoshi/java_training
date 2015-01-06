@@ -57,7 +57,8 @@ public class DataNote {
 	 */
 	static void printWrittenSentence(String[] sentence) {
 		StringBuilder inputSentence = new StringBuilder();
-		for (int i = 0; i < sentence.length; i++) {
+		int arrayLength = sentence.length;
+		for (int i = 0; i < arrayLength; i++) {
 			if (sentence[i].equalsIgnoreCase("exit")) {
 				break;
 			}

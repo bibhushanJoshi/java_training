@@ -13,22 +13,25 @@ import java.util.logging.Logger;
  */
 public class ArrayCompare {
 
-	private static Logger log = Logger.getLogger(ArraySearch.class.getName());
+	private static Logger log = Logger.getLogger(ArrayCompare.class.getName());
 
 	public static void main(String[] args) {
 		String[] arrayInput1 = new String[5];
 		String[] arrayInput2 = new String[5];
 		Scanner scan = new Scanner(System.in);
-		log.info("Enter 5 values for first Array");
-		takeInput(scan, arrayInput1);
-		log.info("Enter 5 values for second Array");
-		takeInput(scan, arrayInput2);
-		if (compareArray(arrayInput1, arrayInput2)) {
-			log.info("The two arrays have same content");
-		} else {
-			log.info("The two arrays have different content");
+		try {
+			log.info("Enter 5 values for first Array");
+			takeInput(scan, arrayInput1);
+			log.info("Enter 5 values for second Array");
+			takeInput(scan, arrayInput2);
+			if (compareArray(arrayInput1, arrayInput2)) {
+				log.info("The two arrays have same content");
+			} else {
+				log.info("The two arrays have different content");
+			}
+		} finally {
+			scan.close();
 		}
-		scan.close();
 	}
 
 	/**
@@ -38,7 +41,8 @@ public class ArrayCompare {
 	 * @param array
 	 */
 	public static void takeInput(Scanner scan, String[] array) {
-		for (int i = 0; i < array.length; i++) {
+		int arrayLength = array.length;
+		for (int i = 0; i < arrayLength; i++) {
 			log.info("Enter value " + (i + 1));
 			array[i] = scan.nextLine();
 		}
@@ -54,7 +58,8 @@ public class ArrayCompare {
 	public static boolean compareArray(String[] arrayInput1,
 			String[] arrayInput2) {
 		boolean sameContent = false;
-		for (int i = 0; i < arrayInput1.length; i++) {
+		int arrayLength = arrayInput1.length;
+		for (int i = 0; i < arrayLength; i++) {
 			if (arrayInput1[i].equalsIgnoreCase(arrayInput2[i])) {
 				sameContent = true;
 			} else {

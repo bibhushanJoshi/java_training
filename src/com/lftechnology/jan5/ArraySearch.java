@@ -21,10 +21,13 @@ public class ArraySearch {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		log.info("Enter 5 values:");
-		takeInput(scan);
-		searchValue(scan);
-		scan.close();
+		try {
+			log.info("Enter 5 values:");
+			takeInput(scan);
+			searchValue(scan);
+		} finally {
+			scan.close();
+		}
 	}
 
 	/**
@@ -33,7 +36,8 @@ public class ArraySearch {
 	 * @param scan
 	 */
 	public static void takeInput(Scanner scan) {
-		for (int i = 0; i < searchListArray.length; i++) {
+		int arrayLength = searchListArray.length;
+		for (int i = 0; i < arrayLength; i++) {
 			log.info("Enter value " + (i + 1));
 			searchListArray[i] = scan.nextLine();
 		}
