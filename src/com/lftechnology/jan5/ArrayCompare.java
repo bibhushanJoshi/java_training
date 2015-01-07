@@ -13,21 +13,21 @@ import java.util.logging.Logger;
  */
 public class ArrayCompare {
 
-	private static Logger log = Logger.getLogger(ArrayCompare.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(ArrayCompare.class.getName());
 
 	public static void main(String[] args) {
 		String[] arrayInput1 = new String[5];
 		String[] arrayInput2 = new String[5];
 		Scanner scan = new Scanner(System.in);
 		try {
-			log.info("Enter 5 values for first Array");
+			LOGGER.info("Enter 5 values for first Array");
 			takeInput(scan, arrayInput1);
-			log.info("Enter 5 values for second Array");
+			LOGGER.info("Enter 5 values for second Array");
 			takeInput(scan, arrayInput2);
 			if (compareArray(arrayInput1, arrayInput2)) {
-				log.info("The two arrays have same content");
+				LOGGER.info("The two arrays have same content");
 			} else {
-				log.info("The two arrays have different content");
+				LOGGER.info("The two arrays have different content");
 			}
 		} finally {
 			scan.close();
@@ -40,10 +40,10 @@ public class ArrayCompare {
 	 * @param scan
 	 * @param array
 	 */
-	public static void takeInput(Scanner scan, String[] array) {
+	private static void takeInput(Scanner scan, String[] array) {
 		int arrayLength = array.length;
 		for (int i = 0; i < arrayLength; i++) {
-			log.info("Enter value " + (i + 1));
+			LOGGER.info("Enter value " + (i + 1));
 			array[i] = scan.nextLine();
 		}
 	}
@@ -55,8 +55,7 @@ public class ArrayCompare {
 	 * @param arrayInput2
 	 * @return
 	 */
-	public static boolean compareArray(String[] arrayInput1,
-			String[] arrayInput2) {
+	private static boolean compareArray(String[] arrayInput1, String[] arrayInput2) {
 		boolean sameContent = false;
 		int arrayLength = arrayInput1.length;
 		for (int i = 0; i < arrayLength; i++) {
