@@ -3,6 +3,7 @@ package com.lftechnology.assignment.jan7;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -17,54 +18,64 @@ import java.util.logging.Logger;
  */
 public class FileInput {
 	private static final Logger LOGGER = Logger.getLogger(FileInput.class.getName());
+	private static Scanner scanUserInput = null;
 
 	public static void main(String[] args) {
-		Scanner scanUserInput = null;
-		createOutputMessage(scanUserInput);
+		createOutputMessage();
 	}
 
 	/**
-	 * This method appends the string to create an output message.
+	 * <p>
+	 * This method appends the string to create an output message. The int,String and float are identified by reading the file which are
+	 * stored in integer array, String array and float array respectively.Then after the value is displayed in a sentence as: Hi!
+	 * StringArray[1], StringArray[2], the sum of intArray[1],intArray[2] and floatArray[1],floatArray[2] is sum, where
+	 * sum=intArray+floatArray;
+	 * </p>
 	 * 
-	 * @param scanUserInput
 	 */
-	private static void createOutputMessage(Scanner scanUserInput) {
+	private static void createOutputMessage() {
 		try {
 			scanUserInput = new Scanner(new File("ab.txt"));
+			FileContent newContent = new FileContent(scanUserInput);
+			StringBuilder outputMsg = new StringBuilder();
+			newContent.getContent();
+			outputMsg.append("Hi! ");
+			int length = FileContent.countString;
+			// appends the string values and comma for ever string value
+			for (int i = 0; i < length; i++) {
+				outputMsg.append(newContent.getContentString()[i] + ", ");
+			}
+			float sum = 0;
+			outputMsg.append("the sum of ");
+			length = FileContent.countInt;
+			// appends the integer content and comma for ever integer value except last
+			for (int i = 0; i < length; i++) {
+				outputMsg.append(newContent.getContentInt()[i]);
+				if (i != (length - 1)) {
+					outputMsg.append(", ");
+				}
+				sum = sum + newContent.getContentInt()[i];
+			}
+			outputMsg.append(" and ");
+			length = FileContent.countFloat;
+			// appends the integer content and comma for ever float value except last
+			for (int i = 0; i < length; i++) {
+				outputMsg.append(newContent.getContentFloat()[i]);
+				if (i != (length - 1)) {
+					outputMsg.append(", ");
+				}
+				sum = sum + newContent.getContentFloat()[i];
+			}
+			outputMsg.append(" is " + sum);
+			LOGGER.log(Level.INFO, "{0}", outputMsg);
 		} catch (FileNotFoundException e) {
-			LOGGER.severe("The cant be scanned" + e);
-		}
-		FileContent newContent = new FileContent(scanUserInput);
-		StringBuilder outputMsg = new StringBuilder();
-		newContent.getContent();
-		outputMsg.append("Hi! ");
-		int length = FileContent.countString;
-		for (int i = 0; i < length; i++) {
-			outputMsg.append(newContent.getContentString()[i] + ", ");
-		}
-		float sum = 0;
-		outputMsg.append("the sum of ");
-		length = FileContent.countInt;
-		for (int i = 0; i < length; i++) {
-			outputMsg.append(newContent.getContentInt()[i]);
-			if (i != (length - 1)) {
-				outputMsg.append(", ");
+			LOGGER.log(Level.SEVERE, "The cant be scanned: {0} ", e.getMessage());
+		} finally {
+			if (scanUserInput != null) {
+				scanUserInput.close();
 			}
-			sum = sum + newContent.getContentInt()[i];
 		}
-		outputMsg.append(" and ");
-		length = FileContent.countFloat;
-		for (int i = 0; i < length; i++) {
-			outputMsg.append(newContent.getContentFloat()[i]);
-			if (i != (length - 1)) {
-				outputMsg.append(", ");
-			}
-			sum = sum + newContent.getContentFloat()[i];
-		}
-		outputMsg.append(" is " + sum);
-		LOGGER.info("" + outputMsg);
 	}
-
 }
 
 /**
@@ -83,7 +94,13 @@ class FileContent {
 	private Scanner fileScanner;
 
 	/**
-	 * This method sets the filename
+	 * Default constructor
+	 */
+	public FileContent() {
+	}
+
+	/**
+	 * This constructor sets the filename
 	 * 
 	 * @param fileName
 	 */
@@ -109,37 +126,61 @@ class FileContent {
 				countString++;
 			}
 		}
+		// sets the contentInt array with 0 value when then there is no integer value in the File content.
 		if (countInt == 0) {
 			contentInt[0] = 0;
 			countInt++;
 		}
+		// sets the contentInt array with 0 value when then there is no integer value in the File content.
 		if (countFloat == 0) {
 			contentFloat[0] = 0;
 			countFloat++;
 		}
 	}
 
+	/**
+	 * @return the contentInt
+	 */
 	public int[] getContentInt() {
 		return contentInt;
 	}
 
+	/**
+	 * @param contentInt
+	 *            the contentInt to set
+	 */
 	public void setContentInt(int[] contentInt) {
 		this.contentInt = contentInt;
 	}
 
+	/**
+	 * @return the contentFloat
+	 */
 	public float[] getContentFloat() {
 		return contentFloat;
 	}
 
+	/**
+	 * @param contentFloat
+	 *            the contentFloat to set
+	 */
 	public void setContentFloat(float[] contentFloat) {
 		this.contentFloat = contentFloat;
 	}
 
+	/**
+	 * @return the contentString
+	 */
 	public String[] getContentString() {
 		return contentString;
 	}
 
+	/**
+	 * @param contentString
+	 *            the contentString to set
+	 */
 	public void setContentString(String[] contentString) {
 		this.contentString = contentString;
 	}
+
 }

@@ -1,7 +1,6 @@
 package com.lftechnology.assignment.jan7;
 
 import java.io.File;
-import java.util.Scanner;
 
 /**
  * Write a program to rename the given file, after renaming the file delete the renamed file. (Accept the file name using command line
@@ -13,16 +12,14 @@ import java.util.Scanner;
  * 
  */
 public class FileManipulation {
-	private static Scanner scanUserInput = new Scanner(System.in);
 
 	public static void main(String[] args) {
 		FileUtilities.createFile();
+		// check if the file exists
 		File oldFile = FileUtilities.getExistingFile();
-		try {
-			File newFile = FileUtilities.renameFile(oldFile);
-			FileUtilities.deleteFile(newFile);
-		} finally {
-			scanUserInput.close();
-		}
+		// renames the file
+		File newFile = FileUtilities.renameFile(oldFile);
+		// deletes the file
+		FileUtilities.deleteFile(newFile);
 	}
 }

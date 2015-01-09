@@ -11,6 +11,7 @@ package com.lftechnology.assignment.jan7;
 public class DirectoryExistance {
 
 	public static void main(String[] args) {
+		// creates new directory
 		FileUtilities.createNewDirectory();
 	}
 }

@@ -2,6 +2,7 @@ package com.lftechnology.assignment.jan7;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -85,7 +86,7 @@ public class FileCreation {
 			LOGGER.info("This is a file");
 			fileStatus = true;
 		} else {
-			LOGGER.info("This is not a file");
+			LOGGER.log(Level.SEVERE, "This is not a file");
 		}
 		return fileStatus;
 	}
@@ -96,6 +97,6 @@ public class FileCreation {
 	 * @param file
 	 */
 	private static void fileNamePath(File file) {
-		LOGGER.info("File \"" + file.getName() + "\" exists at path " + file.getAbsolutePath());
+		LOGGER.log(Level.INFO, "File \" {0} \" exists at path {1}", new Object[] { file.getName(), file.getAbsolutePath() });
 	}
 }

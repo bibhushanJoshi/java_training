@@ -3,8 +3,15 @@ package com.lftechnology.assignment.jan7;
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * This class consists of the reusable component to handle the files.
+ * 
+ * @author bibhushan<bibhushanjoshi@lftechnology.com>
+ * 
+ */
 class FileUtilities {
 	private static final Logger LOGGER = Logger.getLogger(FileUtilities.class.getName());
 	private static Scanner scanUserInput = new Scanner(System.in);
@@ -31,7 +38,7 @@ class FileUtilities {
 				newFile.createNewFile();
 				LOGGER.info("File created");
 			} catch (IOException e) {
-				LOGGER.severe("File cannot be created: " + e);
+				LOGGER.log(Level.INFO, "File cannot be created: {0}" + e);
 			}
 		} else {
 			LOGGER.info("File is not created");
@@ -58,56 +65,58 @@ class FileUtilities {
 				newDir.mkdir();
 				dirMade = true;
 			} catch (SecurityException se) {
-				LOGGER.info("Directory cant be made" + se);
+				LOGGER.log(Level.SEVERE, "Directory cant be made {0} {1}", se.getCause());
 			}
 			if (dirMade) {
-				System.out.println("Directory " + newDir.getName() + " created");
+				LOGGER.log(Level.INFO, "Directory {0} created", newDir.getName());
 			}
 		} else {
-			LOGGER.info(newDir.getName() + " Directory already exists");
+			LOGGER.log(Level.INFO, "{0} Directory already exists", newDir.getName());
 		}
 	}
 
 	/**
 	 * This method get existing files name.
 	 * 
-	 * @param oldFile
+	 * @return file if the file exists
 	 */
 	public static File getExistingFile() {
-		LOGGER.info("Write the file name(E.g - filename)");
+		LOGGER.info("Write the name of file to be renamed(E.g - filename)");
 		String oldFileName = scanUserInput.nextLine();
 		File oldFile = new File(oldFileName + ".txt");
 		if (oldFile.exists() | oldFile.isDirectory() | oldFile.isFile()) {
-			LOGGER.info("The given file " + oldFile + " exists");
+			LOGGER.log(Level.INFO, "The given file {0} exists.", oldFile);
 		} else {
-			LOGGER.info("The given file " + oldFile + " doesnt exists");
+			LOGGER.log(Level.INFO, "The given file {0} doesnt exists.", oldFile);
 			System.exit(0);
 		}
 		return oldFile;
 	}
 
 	/**
-	 * This method renames the given file.
+	 * This method renames the given file in the parameter.
 	 * 
 	 * @param oldFile
-	 * @return
+	 *            is the file to be renamed.
+	 * @return renamed file.
 	 */
 	public static File renameFile(File oldFile) {
 		LOGGER.info("Enter new File name");
 		String newFileName = scanUserInput.nextLine();
 		File newFile = new File(newFileName + ".txt");
 		oldFile.renameTo(newFile);
-		LOGGER.info("The file name " + oldFile.getName() + " is renamed to " + newFile.getName());
+		LOGGER.log(Level.INFO, "The file name {0} is renamed to {1}", new Object[] { oldFile.getName(), newFile.getName() });
 		return newFile;
 	}
 
 	/**
-	 * This method deletes the file given.
+	 * This method deletes the file given in the parameter.
 	 * 
 	 * @param newFile
+	 *            file to be deleted
 	 */
 	public static void deleteFile(File newFile) {
-		LOGGER.info("Do you want to delete " + newFile.getName() + " file " + " (yes/no)");
+		LOGGER.log(Level.INFO, "Do you want to delete {0} file (yes/no)", newFile.getName());
 		String deleteCondition = "";
 		int count = 0;
 		do {
@@ -120,9 +129,9 @@ class FileUtilities {
 
 		if (deleteCondition.equalsIgnoreCase(YES)) {
 			newFile.delete();
-			LOGGER.info("The file " + newFile.getName() + " is deleted");
+			LOGGER.log(Level.INFO, "The file {0} is deleted", newFile.getName());
 		} else {
-			LOGGER.info("The file " + newFile.getName() + " is not deleted");
+			LOGGER.log(Level.INFO, "The file {0} is not deleted", newFile.getName());
 		}
 	}
 }
