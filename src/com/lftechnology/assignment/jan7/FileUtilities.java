@@ -26,22 +26,27 @@ class FileUtilities {
 		LOGGER.info("Do you want to create a file ?");
 		String fileName = "";
 		String createCondition = "";
-		do {
-			LOGGER.info("Please Enter yes or no:");
-			createCondition = scanUserInput.nextLine();
-		} while (!createCondition.equalsIgnoreCase(YES) && !createCondition.equalsIgnoreCase(NO));
-		if (createCondition.equalsIgnoreCase(YES)) {
-			try {
-				LOGGER.info("Please, enter file name:");
-				fileName = scanUserInput.nextLine();
-				File newFile = new File(fileName + ".txt");
-				newFile.createNewFile();
-				LOGGER.info("File created");
-			} catch (IOException e) {
-				LOGGER.log(Level.INFO, "File cannot be created: {0}" + e);
+
+		try {
+			do {
+				LOGGER.info("Please Enter yes or no:");
+				createCondition = scanUserInput.nextLine();
+			} while (!createCondition.equalsIgnoreCase(YES) && !createCondition.equalsIgnoreCase(NO));
+			if (createCondition.equalsIgnoreCase(YES)) {
+				try {
+					LOGGER.info("Please, enter file name:");
+					fileName = scanUserInput.nextLine();
+					File newFile = new File(fileName + ".txt");
+					newFile.createNewFile();
+					LOGGER.info("File created");
+				} catch (IOException e) {
+					LOGGER.log(Level.INFO, "File cannot be created: {0}" + e);
+				}
+			} else {
+				LOGGER.info("File is not created");
 			}
-		} else {
-			LOGGER.info("File is not created");
+		} finally {
+			scanUserInput.close();
 		}
 	}
 
@@ -81,8 +86,13 @@ class FileUtilities {
 	 * @return file if the file exists
 	 */
 	public static File getExistingFile() {
+		String oldFileName = "";
 		LOGGER.info("Write the name of file to be renamed(E.g - filename)");
-		String oldFileName = scanUserInput.nextLine();
+		try {
+			oldFileName = scanUserInput.nextLine();
+		} finally {
+			scanUserInput.close();
+		}
 		File oldFile = new File(oldFileName + ".txt");
 		if (oldFile.exists() | oldFile.isDirectory() | oldFile.isFile()) {
 			LOGGER.log(Level.INFO, "The given file {0} exists.", oldFile);
@@ -101,8 +111,13 @@ class FileUtilities {
 	 * @return renamed file.
 	 */
 	public static File renameFile(File oldFile) {
+		String newFileName = "";
 		LOGGER.info("Enter new File name");
-		String newFileName = scanUserInput.nextLine();
+		try {
+			newFileName = scanUserInput.nextLine();
+		} finally {
+			scanUserInput.close();
+		}
 		File newFile = new File(newFileName + ".txt");
 		oldFile.renameTo(newFile);
 		LOGGER.log(Level.INFO, "The file name {0} is renamed to {1}", new Object[] { oldFile.getName(), newFile.getName() });
@@ -123,7 +138,11 @@ class FileUtilities {
 			if (count > 0) {
 				LOGGER.info("Please enter yes/no");
 			}
-			deleteCondition = scanUserInput.nextLine();
+			try {
+				deleteCondition = scanUserInput.nextLine();
+			} finally {
+				scanUserInput.close();
+			}
 			count++;
 		} while (!deleteCondition.equalsIgnoreCase(YES) && !deleteCondition.equalsIgnoreCase(NO));
 

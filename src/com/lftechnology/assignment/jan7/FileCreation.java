@@ -78,7 +78,7 @@ public class FileCreation {
 	 * This checks if the file is normal or not.
 	 * 
 	 * @param file
-	 * @return true if the given file is a normal file
+	 * @return true if the given file is a normal file otherwise false
 	 */
 	private static boolean checkFile(File file) {
 		boolean fileStatus = false;
@@ -95,6 +95,7 @@ public class FileCreation {
 	 * This method displays the filename and absolute path of the file.
 	 * 
 	 * @param file
+	 *            to shown in specific format
 	 */
 	private static void fileNamePath(File file) {
 		LOGGER.log(Level.INFO, "File \" {0} \" exists at path {1}", new Object[] { file.getName(), file.getAbsolutePath() });
