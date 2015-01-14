@@ -3,8 +3,11 @@ package com.lftechnology.jan12.realworldassignment;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public abstract class Product implements ElectronicProductLayout, ElectronicProductFashionLayout {
+	private static final Logger LOGGER = Logger.getLogger(Product.class.getName());
 	protected List<String> electronicProductList = new ArrayList<String>();
 	protected List<String> electronicProductFashion = new ArrayList<String>();
 	protected int quantity;
@@ -53,4 +56,8 @@ public abstract class Product implements ElectronicProductLayout, ElectronicProd
 		return productSupplier;
 	}
 
+	public void display() {
+		LOGGER.log(Level.INFO, "The new product is: {0} \n The new product fashion list is:{1} \n\n", new Object[] { electronicProductList,
+				electronicProductFashion });
+	}
 }
