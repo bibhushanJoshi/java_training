@@ -21,8 +21,8 @@ public class ShuffleProgram {
 	public static void main(String[] args) {
 		List<String> nameList =
 				new ArrayList<String>(Arrays.asList("bib", "ram", "shyam", "ram", "hari", "bib", "rajesh", "pramesh", "bib"));
-		LOGGER.log(Level.INFO, "The original List is: " + nameList);
+		LOGGER.log(Level.INFO, "The original List is: {0}", nameList);
 		Collections.shuffle(nameList);
-		LOGGER.log(Level.INFO, "The shuffled List is: " + nameList);
+		LOGGER.log(Level.INFO, "The shuffled List is: {0}", nameList);
 	}
 }

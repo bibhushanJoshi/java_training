@@ -24,20 +24,20 @@ public class ListShuffleRearrange {
 		List<Integer> integerList = new ArrayList<Integer>();
 		// add value to list
 		insertListValues(integerList, 1, 49);
-		LOGGER.log(Level.INFO, "The original List value  is " + integerList);
+		LOGGER.log(Level.INFO, "The original List value  is {0}", integerList);
 		// Shuffle of the list
 		Collections.shuffle(integerList);
-		LOGGER.log(Level.INFO, "The List value after shuffle is " + integerList);
+		LOGGER.log(Level.INFO, "The List value after shuffle is {0} ", integerList);
 		// Sorting of sublist
 		List<Integer> sortedList = integerList.subList(0, SORT_VALUE);
-		LOGGER.log(Level.INFO, "The List value after sorting is " + sortedList);
+		LOGGER.log(Level.INFO, "The List value after sorting is {0}", sortedList);
 	}
 
 	/**
 	 * inserts {@link Integer} value form <code>start</code> to <code>end</code> to the {@link List}
 	 * 
 	 * @param numbers
-	 * @{link List} in which the the values are inserted
+	 *            {@link List} in which the the values are inserted
 	 * @param start
 	 *            {@link Integer} value from which adding starts
 	 * @param end

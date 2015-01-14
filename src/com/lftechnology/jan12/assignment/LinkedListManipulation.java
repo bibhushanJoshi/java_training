@@ -28,13 +28,13 @@ public class LinkedListManipulation {
 		LOGGER.log(Level.INFO, "Given Lists are:\n {0} \n {1}", new Object[] { one, two });
 		// adds the given two linked list
 		one.addAll(two);
-		LOGGER.log(Level.INFO, "After two list added:" + one);
+		LOGGER.log(Level.INFO, "After two list added: {0}", one);
 		// removes every second element from linked list
 		removeSecond(one);
-		LOGGER.log(Level.INFO, "After second element removed: " + one);
+		LOGGER.log(Level.INFO, "After second element removed: {0}", one);
 		// removes every remaining element of linked list two(second list)
 		one.removeAll(two);
-		LOGGER.log(Level.INFO, "After all second list element removed: " + one);
+		LOGGER.log(Level.INFO, "After all second list element removed: {0} ", one);
 	}
 
 	/**
@@ -46,7 +46,8 @@ public class LinkedListManipulation {
 	 * @author bibhushan<bibhushanjoshi@lftechnology.com>
 	 */
 	public static void removeSecond(List<String> inputList) {
-		for (int i = 0; i < inputList.size(); i++) {
+		int length = inputList.size();
+		for (int i = 0; i < length / 2; i++) {
 			inputList.remove(i + 1);
 		}
 	}

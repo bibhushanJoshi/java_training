@@ -28,22 +28,22 @@ public class ListUtility {
 	public Map<String, HashSet<String>> manipulateWord(List<String> nameList) {
 		Map<String, HashSet<String>> listValues = new HashMap<String, HashSet<String>>();
 		Set<String> uniques = new HashSet<String>();
-		Set<String> dups = new HashSet<String>();
+		Set<String> duplicate = new HashSet<String>();
 		// insert values of list into a hashSet
 		for (String listValue : nameList) {
 			if (!uniques.add(listValue)) {
-				dups.add(listValue);
+				duplicate.add(listValue);
 			}
 		}
 		listValues.put("unique", (HashSet<String>) uniques);
 		// remove duplicate words from the distinct set
 		Set<String> distinct = new HashSet<String>(uniques);
-		for (String dupsValue : dups) {
-			if (distinct.contains(dupsValue)) {
-				distinct.remove(dupsValue);
+		for (String duplicateValue : duplicate) {
+			if (distinct.contains(duplicateValue)) {
+				distinct.remove(duplicateValue);
 			}
 		}
-		listValues.put("duplicate", (HashSet<String>) dups);
+		listValues.put("duplicate", (HashSet<String>) duplicate);
 		listValues.put("distinct", (HashSet<String>) distinct);
 		return listValues;
 	}
