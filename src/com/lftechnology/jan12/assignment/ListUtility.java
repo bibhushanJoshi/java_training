@@ -27,24 +27,24 @@ public class ListUtility {
 	 */
 	public Map<String, HashSet<String>> manipulateWord(List<String> nameList) {
 		Map<String, HashSet<String>> listValues = new HashMap<String, HashSet<String>>();
-		Set<String> uniques = new HashSet<String>();
-		Set<String> duplicate = new HashSet<String>();
+		Set<String> uniqueWords = new HashSet<String>();
+		Set<String> duplicateWords = new HashSet<String>();
 		// insert values of list into a hashSet
 		for (String listValue : nameList) {
-			if (!uniques.add(listValue)) {
-				duplicate.add(listValue);
+			if (!uniqueWords.add(listValue)) {
+				duplicateWords.add(listValue);
 			}
 		}
-		listValues.put("unique", (HashSet<String>) uniques);
+		listValues.put("unique", (HashSet<String>) uniqueWords);
 		// remove duplicate words from the distinct set
-		Set<String> distinct = new HashSet<String>(uniques);
-		for (String duplicateValue : duplicate) {
-			if (distinct.contains(duplicateValue)) {
-				distinct.remove(duplicateValue);
+		Set<String> distinctWords = new HashSet<String>(uniqueWords);
+		for (String duplicateValue : duplicateWords) {
+			if (distinctWords.contains(duplicateValue)) {
+				distinctWords.remove(duplicateValue);
 			}
 		}
-		listValues.put("duplicate", (HashSet<String>) duplicate);
-		listValues.put("distinct", (HashSet<String>) distinct);
+		listValues.put("duplicate", (HashSet<String>) duplicateWords);
+		listValues.put("distinct", (HashSet<String>) distinctWords);
 		return listValues;
 	}
 }

@@ -25,17 +25,17 @@ public class ListMaipulation {
 	public static void main(String[] args) {
 		List<String> nameList = new ArrayList<String>(Arrays.asList("a", "b", "c", "c", "d", "e", "b"));
 		ListUtility listChange = new ListUtility();
-		Set<String> uniques = new HashSet<String>();
-		Set<String> duplicate = new HashSet<String>();
-		Set<String> distinct = new HashSet<String>();
+		Set<String> uniqueWords = new HashSet<String>();
+		Set<String> duplicateWords = new HashSet<String>();
+		Set<String> distinctWords = new HashSet<String>();
 		// gets unique words
-		uniques = listChange.manipulateWord(nameList).get("unique");
+		uniqueWords = listChange.manipulateWord(nameList).get("unique");
 		// get duplicate words
-		duplicate = listChange.manipulateWord(nameList).get("duplicate");
+		duplicateWords = listChange.manipulateWord(nameList).get("duplicate");
 		// get distinct words
-		distinct = listChange.manipulateWord(nameList).get("distinct");
+		distinctWords = listChange.manipulateWord(nameList).get("distinct");
 		LOGGER.log(Level.INFO,
 				"Given words : {0} \n Unique words : {1} \n Duplicate words : {2} \n No of distinct words: {3} \n Distinct words : {4}",
-				new Object[] { nameList, uniques, duplicate, distinct.size(), distinct });
+				new Object[] { nameList, uniqueWords, duplicateWords, distinctWords.size(), distinctWords });
 	}
 }
