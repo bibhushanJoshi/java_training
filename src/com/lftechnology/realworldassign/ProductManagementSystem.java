@@ -1,8 +1,8 @@
 package com.lftechnology.realworldassign;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -16,13 +16,13 @@ import java.util.logging.Logger;
  * @author bibhushan<bibhushanjoshi@lftechnology.com>
  * 
  */
-public class ProductMangementSystem {
-	private static final Logger LOGGER = Logger.getLogger(ClothesFashion.class.getName());
+public class ProductManagementSystem {
+	private static final Logger LOGGER = Logger.getLogger(ProductManagementSystem.class.getName());
 
 	public static void main(String[] args) {
-		// Electronic product's fashion and product arrayList
-		List<String> clothesList = new ArrayList<String>(Arrays.asList("Jeans", "Tshirt", "Sweater"));
-		List<String> dellDevicesName = new ArrayList<String>(Arrays.asList("Printer", "Laptops", "PC"));
+		// Electronic product's fashion and product set
+		Set<String> clothesList = new HashSet<String>(Arrays.asList("Jeans", "Tshirt", "Sweater"));
+		Set<String> dellDevicesName = new HashSet<String>(Arrays.asList("Printer", "Laptops", "Laptops", "PC"));
 		// addition of different clothes of abercrombie fashion
 		ClothesFashion abercrombie = new ClothesFashion(clothesList, "Nepal udhyog");
 		abercrombie.displayItem();
@@ -33,6 +33,7 @@ public class ProductMangementSystem {
 		abercrombie.displayItem();
 		// addition of different products of dell company
 		ElectronicProduct dell = new ElectronicProduct(dellDevicesName, "CG");
+		dell.displayItem();
 		dell.addItem("Tablet");
 		dell.removeItem("PC");
 		dell.updateItem("Laptops", "Mobiles");

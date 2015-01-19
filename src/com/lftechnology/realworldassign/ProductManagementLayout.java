@@ -1,7 +1,5 @@
 package com.lftechnology.realworldassign;
 
-import java.util.List;
-
 /**
  * This interface gives out the general requirement of the Electronic's Fashion required methods.
  * 

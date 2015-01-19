@@ -1,8 +1,8 @@
 package com.lftechnology.realworldassign;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -16,22 +16,22 @@ public class ElectronicProduct extends Product implements ProductManagementLayou
 	private static final Logger LOGGER = Logger.getLogger(ElectronicProduct.class.getName());
 
 	/**
-	 * This constructor is calls the parent's default constructor and set value of {@link List} clothesFashion to empty
+	 * This constructor is calls the parent's default constructor and set value of {@link Set} clothesFashion to empty
 	 */
 	protected ElectronicProduct() {
 		super();
-		this.electronicProductList = new ArrayList<String>(Arrays.asList(""));
+		this.electronicProductList = new HashSet<String>(Arrays.asList(""));
 	}
 
 	/**
-	 * This constructor calls the parent's parameterized constructor to set productSupplier and also help to set {@link List}
+	 * This constructor calls the parent's parameterized constructor to set productSupplier and also help to set {@link Set}
 	 * 
 	 * @param electronicProductList
-	 *            is a {@link List} of product available
+	 *            is a {@link Set} of product available
 	 * @param productSupplier
 	 *            is {@link String} which is productSupplier name
 	 */
-	protected ElectronicProduct(List<String> electronicProductList, String productSupplier) {
+	protected ElectronicProduct(Set<String> electronicProductList, String productSupplier) {
 		super(productSupplier);
 		this.electronicProductList = electronicProductList;
 	}

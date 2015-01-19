@@ -1,13 +1,13 @@
 package com.lftechnology.realworldassign;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public abstract class Product {
-	protected List<String> electronicProductList = new ArrayList<String>();
+	protected Set<String> electronicProductList = new HashSet<String>();
 	protected String productSupplier;
-	protected List<String> clothesFashion = new ArrayList<String>();
-	protected static final String EMPTY = "none";
+	protected Set<String> clothesFashion = new HashSet<String>();
+	private static final String EMPTY = "none";
 
 	protected Product() {
 		this.productSupplier = EMPTY;
@@ -20,14 +20,14 @@ public abstract class Product {
 	/**
 	 * @return the electronicProductList
 	 */
-	public List<String> getElectronicProductList() {
+	public Set<String> getElectronicProductList() {
 		return electronicProductList;
 	}
 
 	/**
 	 * @return the electronicProductFashion
 	 */
-	public List<String> getElectronicProductFashion() {
+	public Set<String> getElectronicProductFashion() {
 		return clothesFashion;
 	}
 
